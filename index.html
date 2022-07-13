@@ -68,7 +68,7 @@ const affiliatewallet = sessionStorage.getItem('affiliatewallet');
               try {
                 const userAccount = await wax.login();
                 document.getElementById('wallet').value = userAccount;
-                document.getElementById('response').append('Wallet: ' + wallet);
+                document.getElementById('response').append('Wallet: ' + wax.userAccount);
                 await getCurrentMessage();
               } catch(e) {
                 document.getElementById('response').append(e.message);
