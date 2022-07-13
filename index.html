@@ -1,86 +1,111 @@
-<!DOCTYPE html>
-<html class="no-js" lang="fr">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0">
-    <title>Waxrushhh.com</title>
-    <link rel="preload" href="files/Site.min.css" as="style">
-    <link rel="reload" href="files/style.min.css" as="style">
-        <link rel="preload" href="files/sso-theme.min.css" as="style">
-    <link href="files/Site.min.css" rel="stylesheet" type="text/css">
-    <link href="files/style.min.css" rel="stylesheet" type="text/css">
-        <link href="files/sso-theme.min.css" rel="stylesheet" type="text/css">
-        <script src='waxjs.js'></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-xxxx"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html>
+    <head> 
+        <title>Waxio - WAX Desktop Gaming Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="files/codebase/suite.js"></script>
+		<link rel="stylesheet" href="files/codebase/suite.css">
+		<link rel="stylesheet" href="files/index.css">
+        <script src='files/menu.js'></script>
+    </script>
+        
+    <script>
+var url_string = window.location.href;
+var url = new URL(url_string);
+var ref = url.searchParams.get("ref") || 'waxquestwax1';
+var wax_wallet = url.searchParams.get("waxwallet") || 'waxquestwax1';
+console.log('Wallet: ' + wax_wallet);
+//console.log(username);
+//sessionStorage.setItem('ref');
+//sessionStorage.setItem('wax_wallet');
+//var wallet = ${wax.userAccount};
+console.log(sessionStorage.getItem('waxwallet'));
+const waxwallet = sessionStorage.getItem('waxwallet');
 
-  gtag('config', 'G-xxxx');
+console.log(sessionStorage.getItem('affiliatewallet'));
+const affiliatewallet = sessionStorage.getItem('affiliatewallet');
+
+//const affiliate_wallet = url.searchParams.get("ref") || 'waxquestwax1';
+//const charactername = url.searchParams.get("ref") || 'waxquestwax1';
+
+//console.log(charactername):
+
 </script>
 
-</head>
-<body style="background-image: url('files/bg3-plain.png');" align="center">
-<center>
-    <div id="container" width="75px">
-        <header>
-          <img src="files/wax.svg" alt="WAX" width="75px" height="75px">
-          <br>
-<p>Waxio.io</p>
+     </head> 
+     <body>
+        <center>
 
-        </header>
-        <section id="main" align="center">
-<p>Waxio Team Projects Labs
-        <br><br>
-        Welcome, we are the Waxio team. Passionate but especially web development, we focus our efforts on technologies that can be realized from the WAX/EOS blockchain. Here are our different projects.
-        <br><br>
-        <hr><br>
-
-        #1
-        <br>FreeCityGame - Platform Multi Game Interacting With Wax NFT Standard Assets.<br>
-        <a href="https://remixworlds.com/" target="_blank">Visit Remixworlds.com!</a><br>
-        <a href="https://github.com/internetbuilder/wax_remixworlds3" target="_blank">Repo</a> -
-        <a href="https://wax.bloks.io/account/freecitygamx" target="_blank">Game Contract</a> -
-        <a href="https://wax.bloks.io/account/remixgamingx" target="_blank">Token Contract</a>
-         
-         <br>
-         Team: <a href="https://jordanbourbonnais.com/" target="_blank">Jordan Bourbonnais</a> & <a href="https://t.me/tn102021" target="_blank">Tien Nguyen</a>
-        <br><br><hr><br>
-
-#2
-<br>WaxAffiliation - Affiliate program between advertiser and pubisher on wax blockchain.<br>
-<a href="https://waxaffiliation.io/" target="_blank">Visit Waxaffiliation.io!</a> <br>
-         Repo - Contract
-         <br>
-         Team: <a href="https://jordanbourbonnais.com/" target="_blank">Jordan Bourbonnais</a> & <a href="https://t.me/tn102021" target="_blank">Tien Nguyen</a>
-        <br><br><hr><br>
-        #3
-<br>WaxPOS - Multi merchant POS platform on wax blockchain working with phisical WAX/EOS payment gateway. <br>
-         Repo - <a href="https://wax.bloks.io/account/waxioiopos11" target="_blank">Contract</a>
-         <br>
-         Team: <a href="https://jordanbourbonnais.com/" target="_blank">Jordan Bourbonnais</a> & <a href="https://t.me/tn102021" target="_blank">Tien Nguyen</a>
-        <br><br><hr><br>
-        #4
-        <br>Wax Betting - Casino platform based on wax blockchain.  <br>
-        Repo - Contract
-        <br>
-         Team: <a href="https://jordanbourbonnais.com/" target="_blank">Jordan Bourbonnais</a> & <a href="https://t.me/tn102021" target="_blank">Tien Nguyen</a>
-                <br><br>
-
-        <hr>
-        <br>
-
- Join the team or Hire Us<br>
- Contact me on <a href="https://www.facebook.com/messages/t/jordanbourbonnais" target="_blank">Messenger</a>
- 
-
-        </section>
+        
+    
+            
+            <div hidden="hidden" class="clickable" onclick="dhxwindow.show()">show</div>
        
-        <footer align="center">
-            <br><br>
-            © Waxio.io
-        </footer>
-    </div>
-    </center>
-</body></html>
+        <div class="container">
+
+            <iframe name="iframe" class="reponsive-iframe" src="go.html" width="100%" height="100%"></iframe>
+
+
+            
+            
+        </div>
+       
+        <div hidden="hidden" class="clickable" onclick="dhxwindow.show()">show</div>
+        <script>
+			const windowHtml = '<details><summary>Open/Close</summary><p><strong>FreeCityGame</strong><br><a target="iframe" href="https://play.remixworlds.com/">Play</a> - <a target="iframe" href="https://play.remixworlds.com/ranking/">Ranking</a> - <a target="iframe" href="https://play.remixworlds.com/faq/">Docs</a> - <a target="iframe" href="https://waxaffiliation.io">Affiliation</a><br></p><p><strong>WaxQuest</strong><br><a target="iframe" href="https://waxquest.com">Play</a><br></p><p><strong>WaxRush</strong><br><a target="iframe" href="https://waxrush.com">Play</a> - <a target="iframe" href="https://waxrush.com/referral?ref=">Embed this tool$</a><br></p><p><strong>WaxAffiliation</strong><br><a target="iframe" href="https://waxaffiliation.io/affiliation.html?ref=">Home</a> - <a target="iframe" href="https://waxaffiliation.io/affiliate.html?ref=">Affiliate listing</a><br></p><p><strong>Xpension</strong><br><a target="iframe" href="https://play.xpsgame.io/">Play</a><br></p><img style="display: block; width: 25px; height: 25px; margin-top: 20px; margin-left: auto; margin-right: auto" src="files/wax.svg"></details>';
+			
+
+
+            const dhxwindow = new dhx.Window({
+				width: 350,
+				height: 375,
+				closable: true,
+				movable: true,
+				modal: false,
+				title: 'RemixWorlds Dashboard',
+				html: windowHtml
+			});
+
+			dhxwindow.show();
+		</script>
+</center>
+
+
+   
+<!--
+     <script>
+    const windowHtml = '<strong><a href="https://play.remixworlds.com/" target="iframe">2222</a> - <a href="https://remixdapp.vercel.app" target="iframe">Test</a></strong><iframe name="iframe" src="https://remixworlds.com/" width="100%" height="100%"></iframe>';
+    
+    const dhxwindow = new dhx.Window({
+        width: 600,
+        height: 725,
+        closable: false,
+        movable: true,
+        modal: false,
+        resize: true,
+        title: 'Wax Dashboard - Wallet: ' + wax_wallet,
+        html: windowHtml
+    });
+
+    dhxwindow.show2();
+</script>
+-->
+
+
+
+
+        <!--
+        <div id="debug"></div>
+        <script>
+            fetch("../config.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.website_url)
+                document.querySelector("#debug").innerText = data.website_url
+            })
+
+            </script>
+        -->
+
+
+    </body>
+</html>
