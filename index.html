@@ -8,28 +8,19 @@
         <script src='files/menu.js'></script>
         <script src='waxjs.js'></script>
         
-    <script>
-var url_string = window.location.href;
-var url = new URL(url_string);
-var ref = url.searchParams.get("ref") || 'waxquestwax1';
-var wax_wallet = url.searchParams.get("waxwallet") || 'waxquestwax1';
-console.log('Wallet: ' + wax_wallet);
-//console.log(username);
-//sessionStorage.setItem('ref');
-//sessionStorage.setItem('wax_wallet');
-//var wallet = ${wax.userAccount};
-console.log(sessionStorage.getItem('waxwallet'));
-const waxwallet = sessionStorage.getItem('waxwallet');
-
-console.log(sessionStorage.getItem('affiliatewallet'));
-const affiliatewallet = sessionStorage.getItem('affiliatewallet');
-
-//const affiliate_wallet = url.searchParams.get("ref") || 'waxquestwax1';
-//const charactername = url.searchParams.get("ref") || 'waxquestwax1';
-
-//console.log(charactername):
-
-</script>
+        <script>
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var ref = url.searchParams.get("ref") || 'waxquestwax1';
+            //var wallet = url.searchParams.get("wallet") || 'waxquestwax1';
+            //var wallet = ${wax.userAccount};
+            console.log(sessionStorage.getItem('waxwallet'));
+            console.log(sessionStorage.getItem('affiliatewallet'));
+            //const affiliate_wallet = url.searchParams.get("ref") || 'waxquestwax1';
+            const affiliate_wallet = sessionStorage.getItem('affiliatewallet');
+            
+            
+            </script>
      </head> 
         <!--<body style="background-image: url('files/bg3-plain.png');" align="center">-->
         <body>
@@ -103,7 +94,6 @@ const affiliatewallet = sessionStorage.getItem('affiliatewallet');
             });
             
             document.getElementById('response').append(`Thank You ${wax.userAccount}`);
-            window.location.replace("/play.php");
             // document.getElementById('response').append(wax.userAccount);
 
             // document.createElement("<div id='myID'> my Text </div>");
