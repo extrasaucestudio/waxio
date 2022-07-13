@@ -39,7 +39,7 @@ const affiliatewallet = sessionStorage.getItem('affiliatewallet');
         <iframe name="iframe" class="reponsive-iframe" src="go.html" width="100%" height="100%"></iframe>
         </div>
         <script>
-			const windowHtml = '<p><strong>Xpension</strong> - <a target="iframe" href="https://play.xpsgame.io/">Play</a><br><strong>FreeCityGame</strong> - <a target="iframe" href="https://play.remixworlds.com/">Play</a> - <a target="iframe" href="https://play.remixworlds.com/ranking/">Ranking</a> - <a target="iframe" href="https://play.remixworlds.com/faq/">Docs</a><br><strong>WaxQuest</strong> - <a target="iframe" href="https://waxquest.com">Play</a><br><strong>WaxRush</strong> - <a target="iframe" href="https://waxrush.com">Play</a> - <a target="iframe" href="https://waxrush.com/referral?ref=">Embed this tool$</a><br><strong>WaxAffiliation</strong> - <a target="iframe" href="https://waxaffiliation.io/affiliation.html?ref=">Home</a> - <a target="iframe" href="https://waxaffiliation.io/affiliate.html?ref=">Affiliate listing</a><br></p><details><summary>More Games</summary><p><strong>WaxAffiliation</strong> - <a target="iframe" href="https://waxaffiliation.io/affiliation.html?ref=">Home</a> - <a target="iframe" href="https://waxaffiliation.io/affiliate.html?ref=">Affiliate listing</a><br></p></details><hr><img id="login" onclick=login() style="display: block; width: 50px; height: 50px; margin-top: 20px; margin-left: auto; margin-right: auto" src="files/wax.svg"><center><input hidden="hidden" id="wallet"><p id="response"></p></center>';
+			const windowHtml = '<p><strong>Xpension</strong> - <a target="iframe" href="https://play.xpsgame.io/">Play</a><br><strong>FreeCityGame</strong> - <a target="iframe" href="https://play.remixworlds.com/">Play</a> - <a target="iframe" href="https://play.remixworlds.com/ranking/">Ranking</a> - <a target="iframe" href="https://play.remixworlds.com/faq/">Docs</a><br><strong>WaxQuest</strong> - <a target="iframe" href="https://waxquest.com">Play</a><br><strong>WaxRush</strong> - <a target="iframe" href="https://waxrush.com">Play</a> - <a target="iframe" href="https://waxrush.com/referral?ref=">Embed this tool$</a><br><strong>WaxAffiliation</strong> - <a target="iframe" href="https://waxaffiliation.io/affiliation.html?ref=">Home</a> - <a target="iframe" href="https://waxaffiliation.io/affiliate.html?ref=">Affiliate listing</a><br></p><details><summary>More Games</summary><p><strong>WaxAffiliation</strong> - <a target="iframe" href="https://waxaffiliation.io/affiliation.html?ref=">Home</a> - <a target="iframe" href="https://waxaffiliation.io/affiliate.html?ref=">Affiliate listing</a><br></p></details><hr><table><tr><th><img id="login" onclick=login() style="display: block; width: 50px; height: 50px; margin-top: 20px; margin-left: auto; margin-right: auto" src="files/wax.svg">&nbsp;</th><th id="current2">WaxLogin</th></tr></table><br><div class="clickable" id="current3"></div><strong><div class="clickable" id="sign" onclick=sign() alt="Subscribe & Play">Subscribe & Play</div></strong></div><p id="response"></p>';
 			
             const dhxwindow = new dhx.Window({
 				width: 300,
@@ -53,78 +53,114 @@ const affiliatewallet = sessionStorage.getItem('affiliatewallet');
 
 			dhxwindow.show();
 		</script>
-        <script>
-            const wax = new waxjs.WaxJS({
-              rpcEndpoint: 'https://wax.greymass.com'
+
+
+
+    <script>
+        const wax = new waxjs.WaxJS({
+          rpcEndpoint: 'https://wax.greymass.com'
+        });
+      
+        async function login() {
+          try {
+            const userAccount = await wax.login();
+            document.getElementById('wallet').value = wax.userAccount;
+            
+          GrowlNotification.notify({
+          title: 'Well Done!',
+          description: `Wallet: ${wax.userAccount}`,
+          type: 'error',
+          position: 'top-center',
+          closeTimeout: 0
+          });
+
+            await getCurrentMessage();
+          } catch(e) {
+            document.getElementById('response').append(e.message);
+          }
+        }
+      
+        async function sign() {
+          if(!wax.api) {
+            return document.getElementById('response').append('* Login first *');
+            
+          }
+      
+          const wallet = document.getElementById('wallet').value;
+
+      
+          try {
+            const result = await wax.api.transact({
+              actions: [{
+                account: 'freecitygamx',
+                name: 'adduseraff',
+                authorization: [{
+                  actor: wax.userAccount,
+                  permission: 'active',
+                }],
+                data: {
+                  wallet,
+                  affiliate_wallet,
+                },
+              }]
+            }, {
+              blocksBehind: 3,
+              expireSeconds: 30
             });
-            // const wax = new waxjs.WaxJS({
-            //   rpcEndpoint: 'http://wax-all.test:8888',
-            //   tryAutoLogin: true,
-            //   waxSigningURL: 'http://all-access.wax.test:8113',
-            //   waxAutoSigningURL: 'http://idm.wax.test:8113/v1/accounts/auto-accept/'
-            // });
+            
+            document.getElementById('response').append(`Thank You ${wax.userAccount}`);
+            window.location.replace("/play.php");
+            // document.getElementById('response').append(wax.userAccount);
+
+            // document.createElement("<div id='myID'> my Text </div>");
+            // document.body.insertBefore(elem,document.body.childNodes[0]);
+
+            // document.getElementById('response').append(JSON.stringify(result));
+            // console.log(result); 
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            await getCurrentMessage();
+          } catch(e) {
+            document.getElementById('response').append('* Expired Transaction *');
+          }
+        }
+      
+          async function getCurrentMessage() {
+          const res = await wax.rpc.get_table_rows({
+            json: true,
+            code: 'freecitygamx',
+            scope: 'freecitygamx',
+            table: 'users',
+            lower_bound: wax.userAccount,
+            upper_bound: wax.userAccount,
+          });
+      
+          const message = res.rows[0] ? res.rows[0].message : `Wallet: ${wax.userAccount}`;
+          document.getElementById('current').textContent = message;
+          document.getElementById('current2').textContent = `${wax.userAccount}`;
+          document.getElementById('current3').textContent = `Now you are ready to `;
+          sessionStorage.setItem('waxwallet', wax.userAccount);
+          console.log(sessionStorage.getItem('waxwallet'));
+          sessionStorage.setItem('affiliatewallet', ref);
+          console.log(sessionStorage.getItem('affiliatewallet'));
           
-            async function login() {
-              try {
-                const userAccount = await wax.login();
-                document.getElementById('wallet').value = userAccount;
-                document.getElementById('response').append('Wallet: ' + wax.userAccount);
-                await getCurrentMessage();
-              } catch(e) {
-                document.getElementById('response').append(e.message);
-              }
-            }
           
-            async function sign() {
-              if(!wax.api) {
-                return document.getElementById('response').append('* Login first *');
-              }
+                           
+          //console.log(sessionStorage.getItem('waxwallet'));
           
-              const wallet = document.getElementById('wallet').value;
-          
-              try {
-                const result = await wax.api.transact({
-                  actions: [{
-                    account: 'freecitygamx',
-                    name: 'adduseraff',
-                    authorization: [{
-                      actor: wax.userAccount,
-                      permission: 'active',
-                    }],
-                    data: {
-                      wallet,
-                      affiliate_wallet: ref,
-                    },
-                  }]
-                }, {
-                  blocksBehind: 3,
-                  expireSeconds: 30
-                });
-                document.getElementById('response').append('* You are Register *');
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                await getCurrentMessage();
-              } catch(e) {
-                document.getElementById('response').append('* Expired Transaction *');
-              }
-            }
-          
-            async function getCurrentMessage() {
-              const res = await wax.rpc.get_table_rows({
-                json: true,
-                code: 'freecitygamx',
-                scope: 'freecitygamx',
-                table: 'users',
-                lower_bound: wax.userAccount,
-                upper_bound: wax.userAccount,
-              });
-          
-              const message = res.rows[0] ? res.rows[0].message : `<No message is set for ${wax.userAccount}>`;
-            }
-          
-            // set a random value to the initial message value
-            document.getElementById('message').value = Math.random().toString(36).substring(2);
-          
-          </script>
+          //document.getElementById('current3').textContent = `${wax.userAccount}`;
+      
+          //document.getElementById('nameinput').append(wax.userAccount);
+
+          //document.getElementById('nameinput').textContent = wax.userAccount;
+
+          // document.getElementById('current2').append(wax.userAccount);
+          //document.getElementById('options').textContent = (wax.userAccount);
+          //document.getElementById('options').textContent = (new GrowlNotification(options)).show();
+        }
+         // set a random value to the initial message value
+        document.getElementById('message').value = Math.random().toString(36).substring(2);
+      
+      </script>
 </center>
 
 
