@@ -13,12 +13,12 @@
             var url_string = window.location.href;
             var url = new URL(url_string);
             var ref = url.searchParams.get("ref") || 'waxdashwaxio';
+            const affiliate_wallet = sessionStorage.getItem('affiliatewallet');
             //var wallet = url.searchParams.get("wallet") || 'waxdashwaxio';
             //var wallet = ${wax.userAccount};
             console.log(sessionStorage.getItem('waxwallet'));
             console.log(sessionStorage.getItem('affiliatewallet'));
             //const affiliate_wallet = url.searchParams.get("ref") || 'waxdashwaxio';
-            const affiliate_wallet = sessionStorage.getItem('affiliatewallet');
             </script>
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3G6E8QZ28"></script>
 <script>
