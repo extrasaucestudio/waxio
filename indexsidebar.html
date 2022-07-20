@@ -97,135 +97,57 @@
     opacity: 1;
   }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  font-family: "Lato", sans-serif;
 }
 
-.menuItem {
-  display: block;
-  margin: 2rem 4rem;
-  font-size: 1.8rem;
-  color: white;
-  text-decoration: none;
-}
-
-.menuItem:hover {
-  text-decoration: underline;
-}
-
-.hamburger {
+.sidenav {
+  height: 100%;
+  width: 200px;
   position: fixed;
-  z-index: 100;
-  top: 1rem;
-  right: 1rem;
-  padding: 4px;
-  border: black solid 1px;
-  background: white;
-  cursor: pointer;
-}
-
-.closeIcon {
-  display: none;
-}
-
-.menu {
-  position: fixed;
-  transform: translateY(-100%);
-  transition: transform 0.2s;
+  z-index: 1;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  background: black;
-  color: white;
-  list-style: none;
-  padding-top: 4rem;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-.showMenu {
-  transform: translateY(0);
-}
- /* The side navigation menu */
- .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 6px 6px 6px 32px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
-  transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-} 
-
+}
   </style>
      </head> 
-     
         <!--<body style="background-image: url('files/bg3-plain.png');" align="center">-->
         <body>
-          <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="sidenav">
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
           </div>
           
-          
-
-          <script>
-            /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-} 
-          </script>
+          <div class="main">
+            <h2>Sidenav Example</h2>
+            <p>This sidenav is always shown.</p>
+          </div>
           <!--
             <header class="dhx_sample-header">
             <div class="dhx_sample-header__main">
@@ -251,14 +173,12 @@ function closeNav() {
           
 
                     
-          <!-- Add all page content inside this div if you want the side nav to push page content to the right 
-            (not used if you only want the sidenav to sit on top of the page -->
-          <div id="main">
-          <span onclick="openNav()">open</span>
+          
+          
             
           <iframe id="iframe" name="iframe" class="reponsive-iframe" src="go.html" width="100%" height="100%"></iframe>
           
-          </div> 
+          
 
           
           
