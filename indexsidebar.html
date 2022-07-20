@@ -11,7 +11,6 @@
         <script type="text/javascript" src="files/codebase/suite.js"></script>
 		<link rel="stylesheet" href="files/codebase/suite.css">
 		<link rel="stylesheet" href="files/index.css">
-        <script src='files/menu.js'></script>
         <script src='waxjs.js'></script>
         <script>
             var url_string = window.location.href;
@@ -142,6 +141,26 @@ body {
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="clickable" onclick="dhxwindow.show()">show</div>
           </div>
           
           <div class="main">
@@ -187,12 +206,13 @@ body {
 
 	
         <center>
-        <div hidden="hidden" class="clickable" onclick="dhxwindow.show()">show</div>
+        
         
 <!--
 <strong>ClashDome</strong> - <a target="iframe" href="https://clashdome.io/">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/clashdomenft">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=clashdomenft">Market</a><br>
 
-<div class="popup" onclick="myFunction()">Market<span class="popuptext" id="myPopup"><iframe name="popup" class="reponsive-iframe" src="xxx" width="1000px" height="600px"></iframe></span></div>
+<div class="popup" onclick="myFunction()">Market<span class="popuptext" id="myPopup">
+<iframe name="popup" class="reponsive-iframe" src="xxx" width="1000px" height="600px"></iframe></span></div>
    
 <div class="tooltip">WaxLogin<span class="tooltiptext">Tooltip text</span></div>
 <div class="tooltip">WaxLogin<span class="tooltiptext">Tooltip text</span></div>
@@ -303,7 +323,6 @@ body {
             lower_bound: wax.userAccount,
             upper_bound: wax.userAccount,
           });
-
           
       
           const message = res.rows[0] ? res.rows[0].message : `Wallet: ${wax.userAccount}`;
@@ -333,30 +352,6 @@ body {
 </script>
 
 </center>
-
-
-   
-<!--
-     <script>
-    const windowHtml = '<strong><a href="https://play.remixworlds.com/" target="iframe">2222</a> - <a href="https://remixdapp.vercel.app" target="iframe">Test</a></strong><iframe name="iframe" src="https://remixworlds.com/" width="100%" height="100%"></iframe>';
-    
-    const dhxwindow = new dhx.Window({
-        width: 600,
-        height: 725,
-        closable: false,
-        movable: true,
-        modal: false,
-        resize: true,
-        title: 'Wax Dashboard - Wallet: ' + wax_wallet,
-        html: windowHtml
-    });
-
-    dhxwindow.show2();
-</script>
--->
-
-
-
 
         <!--
         <div id="debug"></div>
