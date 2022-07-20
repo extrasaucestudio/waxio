@@ -46,7 +46,55 @@
   //console.log(charactername):
   
   </script>
+  <style>
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+    
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -60px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+    
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    label {
+      display: block;
+      font: 1rem 'Fira Sans', sans-serif;
+  }
   
+  input,
+  label {
+      margin: .4rem 0;
+  }
+    </style>
 </head>
 <body>
 <center>
@@ -96,7 +144,11 @@
         <br><br><br><br><br>
         <p>Waxio.io</p>
         <img src="files/wax.svg" alt="WAX" width="200px" height="200px">
-        <p>WAX Gaming Dashboard to manage<br> multiple game and dApp on the same page.<br><br><strong><a href="https://play.xpsgame.io">Try!</a></strong></p>
+        <p>WAX Gaming Dashboard to manage<br> multiple game and dApp on the same page.
+          <br><br>
+          <div class="tooltip"><strong><h3><a href="https://play.xpsgame.io">TRY!</a></strong><span class="tooltiptext">To understand the concept of this small dApp which is positioned below the WAX sites navigate, open Xpansion below by clicking this link.</span></div>
+          
+        </p>
     </header>
       
                  
