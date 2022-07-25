@@ -178,7 +178,8 @@ color: #818181;
    - <div class="tooltip">
     <a target="iframe" href="affiliate.html">Affiliate Listing</a>
     <span class="tooltiptext">See your referrer or your referrals.</span>
-  </div> - <a id="chat_embed" href="https://www.twitch.tv/embed/chiefwebofficer/chat?parent=waxio.io&quot;&popout_chat=true" target="iframe">ChatRoom</a>"
+  </div> - <a href="https://discord.com/channels/886577077803958312/886577079381012482" target="iframe" rel="noreferrer">ChatRoom</a> - 
+  <a href="#" onclick="window.iframe.location.href='https://discord.com/channels/886577077803958312/886577079381012482';">test</a>
   </strong>
   <br><br>
             <strong><a class="clickable" onclick="dhxwindow.show()">---> Open Waxio Popup <---</a></strong></center><br>
@@ -236,9 +237,14 @@ color: #818181;
                <a target="iframe" href="https://nfthive.io/market?collection=centurytrain">M</a>
                <br><img style="display: width: 15px; height: 15px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="https://ipfs.hivebp.io/thumbnail?hash=QmXzqjsHoCNT7K5UR7JDVxGcCVsM3WwN8DsDWfPSTKXtti">
                <strong>BlockchainRPG</strong> - <a target="iframe" href="https://play.blockchainrpg.io">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/brpg">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=brpg">M</a>
-               <br></div><details><summary><strong>Tools</strong></summary><strong>Alcor</strong> - <a target="iframe" href="https://wax.alcor.exchange/swap/">Swap</a>/<a target="iframe" href="https://wax.alcor.exchange/wallet/">Wallet</a><br><strong>NFTHive</strong> - <a target="iframe" href="https://nfthive.io/market/">Market</a>/<a target="iframe" href="https://nfthive.io/trade/">Trade</a><br><strong>WaxMarketcap</strong> - <a target="iframe" href="https://waxmarketcap.com/">dApp</a><br><strong>WaxAffiliation</strong> - <a target="iframe" href="https://waxaffiliation.io/?ref=">dApp</a></details><details><summary><strong>Share Waxio</strong></summary>Share with <a target="_blank" href="https://twitter.com/share?url=https%3A%2F%2Fwaxio.io&amp;text=Wax%20Gaming%20Dashboard%20to%20manage%20multiple%20games%20and%20dApp%20in%20the%20same%20page%20%23wax%20%23waxp%20%23waxgaming%20%23waxio%20%23waxgame%20%23waxnft%20%23nft&amp;">Twitter</a> or <a target="_blank" href="http://www.facebook.com/share.php?u=https://waxio.io.org/">Facebook</a><br></details><br>
+               <br></div><details><summary><strong>Tools</strong></summary><strong>Alcor</strong> - <a target="iframe" href="https://wax.alcor.exchange/swap/">Swap</a>/<a target="iframe" href="https://wax.alcor.exchange/wallet/">Wallet</a><br><strong>NFTHive</strong> - <a target="iframe" href="https://nfthive.io/market/">Market</a>/<a target="iframe" href="https://nfthive.io/trade/">Trade</a><br><strong>WaxMarketcap</strong> - <a target="iframe" href="https://waxmarketcap.com/">dApp</a><br><strong>WaxAffiliation</strong> - <a target="iframe" href="https://waxaffiliation.io/?ref=">dApp</a></details><details><summary><strong>Share Waxio</strong></summary>Share with <a target="_blank" href="https://twitter.com/share?url=https%3A%2F%2Fwaxio.io&amp;text=Wax%20Gaming%20Dashboard%20to%20manage%20multiple%20games%20and%20dApp%20in%20the%20same%20page%20%23wax%20%23waxp%20%23waxgaming%20%23waxio%20%23waxgame%20%23waxnft%20%23nft&amp;">Twitter</a> or <a target="_blank" href="http://www.facebook.com/share.php?u=https://waxio.io.org/">Facebook</a></details>
             
             <center>
+              <div>
+                Can’t find the right dApp?<br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4yuSFHX1euM3g__lxAsspStauayb8uubrDLxSYFJXNvKzFQ/viewform?vc=0&c=0&w=1&flr=0" target="iframe">Request an dApp</a>
+              </div>
+              <br>
               <a target="iframe" href="https://waxmarketcap.com/"><img style="display: width: 2px; height: 20px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="files/images/logo-waxmarketcap.svg"></a>
               <br><br><div hidden="hidden" id="response"></div>
                 <strong><div id="current3"></div></strong>
@@ -247,8 +253,34 @@ color: #818181;
               <p hidden="hidden" id="current"></p>
               <input hidden="hidden" id="wallet">
 
-            <br>
-            
+            <div>
+              Discord Members: <span id="json-id"></span><br><a href="https://discord.com/invite/D7SbP6AY" target="iframe"><span id="json-name"></span></a>
+              </div>
+        <div>
+    <span id="collection-name"></span>
+     </div>
+     <script>
+            fetch("https://discord.com/api/guilds/886577077803958312/widget.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.channels[0].name);
+                document.querySelector("#json-id").innerText = data.presence_count;
+                document.querySelector("#json-name").innerText = data.instant_invite;
+            })
+
+            </script>
+
+  <script>
+  fetch("https://atomic.hivebp.io/atomicassets/v1/assets?collection_name=freecitygame&template_id=369713&page=1&limit=100&order=desc&sort=asset_id")
+  .then(response => response.json())
+  .then(data => {
+      console.log(data.channels[0].name);
+      document.querySelector("#collection-name").innerText = data.asset_id;
+  })
+  </script>
+  <!--
+
+-->
           </div>
           
           <div class="main">
@@ -300,11 +332,11 @@ color: #818181;
 
 <center>
         <script>
-			const windowHtml = '<iframe src="https://www.twitch.tv/embed/chiefwebofficer/chat?parent=waxio.io" height="540" width="340"></iframe>';
+			const windowHtml = '<iframe src="https://titanembeds.com/embed/886577077803958312" height="600" width="575" frameborder="0"></iframe>';
 
             const dhxwindow = new dhx.Window({
-				width: 400,
-				height: 625,
+				width: 625,
+				height: 650,
 				closable: true,
 				movable: true,
 				modal: false,
@@ -427,17 +459,10 @@ color: #818181;
 
 </center>
 
-        <!--
-        <div id="debug"></div>
-        <script>
-            fetch("../config.json")
-            .then(response => response.json())
-            .then(data => {
-                console.log(data.website_url)
-                document.querySelector("#debug").innerText = data.website_url
-            })
+       
+        
+ <!--
 
-            </script>
         -->
 
 
