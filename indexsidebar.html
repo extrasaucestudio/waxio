@@ -186,7 +186,7 @@ color: #818181;
   </strong>
   </div>
   <br>
-            <strong><a id="myBlinkingDiv" onclick="dhxwindow.show()">---> Open Waxio Popup <---</a></strong></center><br>
+            </center>
             <script>
             var blink_speed = 500; // every 1000 == 1 second, adjust to suit
               var t = setInterval(function () {
@@ -271,14 +271,15 @@ color: #818181;
               <br><br><div hidden="hidden" id="response"></div>
                 <strong><div id="current3"></div></strong>
                 <div id="current4"></div>
-
+              <br>
+              <div>
+              Discord Members: <span id="json-id"></span><br><a href="https://discord.com/invite/D7SbP6AY" target="iframe"><span id="json-name"></span></a>
+              </div>
               </center>
               <p hidden="hidden" id="current"></p>
               <input hidden="hidden" id="wallet">
 
-            <div>
-              Discord Members: <span id="json-id"></span><br><a href="https://discord.com/invite/D7SbP6AY" target="iframe"><span id="json-name"></span></a>
-              </div>
+            
         <div>
     <span id="collection-name"></span>
      </div>
@@ -351,7 +352,6 @@ color: #818181;
 
 <script> window.intergramId = "1926645065" </script>
 <script id="intergram" type="text/javascript" src="https://www.intergram.xyz/js/widget.js"></script>
--->     
 
 <script> 
   window.intergramId = "1926645065";
@@ -365,6 +365,10 @@ color: #818181;
        alwaysUseFloatingButton: false // Use the mobile floating button also on large screens
   };
 </script>
+
+-->     
+
+
 <script id="intergram" type="text/javascript" src="https://www.intergram.xyz/js/widget.js"></script>
 
 <center>
@@ -372,8 +376,8 @@ color: #818181;
 			const windowHtml = '<iframe name="iframe2" class="responsive-iframe" src="https://titanembeds.com/embed/886577077803958312" height="100%" width="100%" frameborder="0"></iframe>';
 
             const dhxwindow = new dhx.Window({
-				width: 350,
-				height: 500,
+				width: 375,
+				height: 550,
 				closable: true,
 				movable: true,
 				modal: false,
