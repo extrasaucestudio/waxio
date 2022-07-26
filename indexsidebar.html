@@ -12,10 +12,12 @@
 		<link rel="stylesheet" href="files/codebase/suite.css">
 		<link rel="stylesheet" href="files/index.css">
         <script src='waxjs.js'></script>
+        <script src='games.js'></script>
         <script>
             var url_string = window.location.href;
             var url = new URL(url_string);
             var ref = url.searchParams.get("ref") || 'waxdashwaxio';
+            var toiframe = url.searchParams.get("url") || 'go.html';
             const affiliate_wallet = sessionStorage.getItem('affiliatewallet');
             //var wallet = url.searchParams.get("wallet") || 'waxdashwaxio';
             //var wallet = ${wax.userAccount};
@@ -194,21 +196,28 @@ color: #818181;
                   ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
               }, blink_speed);
               </script>
+
+               
+
               <details><summary><strong>Chatroom</strong></summary>
                 <strong>
                   <a target="iframe" href="https://titanembeds.com/embed/886577077803958312">Open in Background</a><br>
                   <a target="iframe2" onclick="dhxwindow.show()" href="https://titanembeds.com/embed/886577077803958312">Open in Popup</a><br>
                   </strong>
               </details><details><summary><strong>Games</strong></summary>
-              <details>
               
-              <summary><strong>Rplanet</strong> <img style="display: width: 14px; height: 14px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="https://ipfs.hivebp.io/thumbnail?hash=QmegodhiwaGMsKhCe74WjFtojrm7fPoFHP4w7HBJLd5qAP"></summary>
-              <strong><a target="iframe" href="https://rplanet.io/lab">Play in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://rplanet.io/lab">Play in Popup</a><br>
-              <a target="iframe" href="https://waxmarketcap.com/collection/rplanet">MarketCap in Background</a><br><a target="iframe2" href="https://waxmarketcap.com/collection/rplanet">MarketCap in Popup</a><br>
-              <a target="iframe" href="https://nfthive.io/market?collection=rplanet">Market in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://nfthive.io/market?collection=rplanet">Market in Popup</a><br>
               
-              </strong><a target="iframe" href="https://waxmarketcap.com/collection/rplanet"><img style="display: width: 13px; height: 13px;" src="files/images/logo-info2.png"></a> <a target="iframe" href="https://nfthive.io/market?collection=rplanet"><img style="display: width: 12px; height: 12px;" src="files/images/logo-nfthive.svg"></a><br>
-              </details>
+               <script>
+                // document.write('xxx');
+                  document.write('<details><summary><strong>Rplanet</strong><img style="display: width: 14px; height: 14px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="https://ipfs.hivebp.io/thumbnail?hash=' + rplanet_img + '"></summary><strong><a target="iframe" href="' + rplanet_gameurl + '">Play in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="' + rplanet_gameurl + '">Play in Popup</a><br><a target="iframe" href="https://waxmarketcap.com/collection/' + rplanet_gamewallet + '">MarketCap in Background</a><br><a target="iframe2" href="https://waxmarketcap.com/collection/' + rplanet_gamewallet + '">MarketCap in Popup</a><br><a target="iframe" href="https://nfthive.io/market?collection=' + rplanet_gamewallet + '">Market in Background</a><br><a target="iframe2" onclick="dhxwindow.show()" href="https://nfthive.io/market?collection=' + rplanet_gamewallet + '">Market in Popup</a><br></strong><a target="iframe" href="https://waxmarketcap.com/collection/' + rplanet_gamewallet + '"></details>');
+
+              </script>
+
+<!--
+  <img style="display: width: 13px; height: 13px;" src="files/images/logo-info2.png"></a> <a target="iframe" href="https://nfthive.io/market?collection=rplanet"><img style="display: width: 12px; height: 12px;" src="files/images/logo-nfthive.svg"></a><br>
+
+-->
+              
               <img style="display: width: 15px; height: 15px; margin-top: 0px; margin-left: 0px; margin-right: 0px" src="https://ipfs.hivebp.io/thumbnail?hash=QmTGn2Y4kgmwKh2zhJdndoe63CS55wXtNaZguzVzS7rBzY">
               <strong>Crypto4Shots</strong>
                - <a target="iframe" href="https://play.crypto-shots.com">Play</a>/<a target="iframe" href="https://waxmarketcap.com/collection/crypto4shots">Info</a>/<a target="iframe" href="https://nfthive.io/market?collection=crypto4shots">M</a>
@@ -275,6 +284,7 @@ color: #818181;
               <div>
               Discord Members: <span id="json-id"></span><br><a href="https://discord.com/invite/D7SbP6AY" target="iframe"><span id="json-name"></span></a>
               </div>
+              <div id="debug"></div>
               </center>
               <p hidden="hidden" id="current"></p>
               <input hidden="hidden" id="wallet">
@@ -302,9 +312,33 @@ color: #818181;
       document.querySelector("#collection-name").innerText = data.asset_id;
   })
   </script>
-  <!--
 
+ <!--
+<script>
+    fetch("files/files/config.json")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.instant_invite);
+        document.querySelector("#debug").innerText = data.instant_invite);
+    })
+
+    </script>
+
+ <script>
+let maVoiture = {
+  make: 'Ford',
+  model: 'Mustang',
+  year: 1969
+};
+ </script>
 -->
+
+
+
+ 
+    
+    
+
           </div>
           
           <div class="main">
@@ -376,7 +410,7 @@ color: #818181;
 			const windowHtml = '<iframe name="iframe2" class="responsive-iframe" src="https://titanembeds.com/embed/886577077803958312" height="100%" width="100%" frameborder="0"></iframe>';
 
             const dhxwindow = new dhx.Window({
-				width: 375,
+				width: 400,
 				height: 550,
 				closable: true,
 				movable: true,
@@ -502,9 +536,7 @@ color: #818181;
 
        
         
- <!--
-
-        -->
+                 
 
 
     </body>

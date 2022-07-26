@@ -1,0 +1,13 @@
+//var url_string = window.location.href;
+//var url = new URL(url_string);
+//var ref = url.searchParams.get("ref") || 'waxdashwaxio';
+//var toiframe = url.searchParams.get("url") || 'go.html';
+//const affiliate_wallet = sessionStorage.getItem('affiliatewallet');
+//var wallet = url.searchParams.get("wallet") || 'waxdashwaxio';
+//console.log(sessionStorage.getItem('waxwallet'));
+//console.log(sessionStorage.getItem('affiliatewallet'));
+//var wallet = ${wax.userAccount};
+var rplanet_name = "Rplanet";
+var rplanet_img = "QmegodhiwaGMsKhCe74WjFtojrm7fPoFHP4w7HBJLd5qAP";
+var rplanet_gameurl = "https://rplanet.io/lab";
+var rplanet_gamewallet = "rplanet";
