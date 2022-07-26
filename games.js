@@ -67,10 +67,10 @@ var gnocityworld_img = "QmNc4yhWiqkeTs8DZzgSKcarRYkS8cA6zB4yZQV9d3uV4a";
 var gnocityworld_gameurl = "https://www.gnocity.io/";
 var gnocityworld_gamewallet = "gnocityworld";
 
-var gnocityworld_name = "AgeOfFarming";
-var gnocityworld_img = "Qma4EcBu4GtVuRZL6qR8m8xnNqSVaGi8SCqctfynwyVKet";
-var gnocityworld_gameurl = "https://play.ageoffarming.io";
-var gnocityworld_gamewallet = "ageoffarming";
+var ageoffarming_name = "AgeOfFarming";
+var ageoffarming_img = "Qma4EcBu4GtVuRZL6qR8m8xnNqSVaGi8SCqctfynwyVKet";
+var ageoffarming_gameurl = "https://play.ageoffarming.io";
+var ageoffarming_gamewallet = "ageoffarming";
 
 var funnycatgame_name = "FunnyCat";
 var funnycatgame_img = "QmeiCMAs1qXcH4TGBmGkMiuxN5pkLNuu67NbwMe84HM92V";
