@@ -186,8 +186,14 @@ color: #818181;
   </strong>
   </div>
   <br>
-            <strong><a class="clickable" onclick="dhxwindow.show()">---> Open Waxio Popup <---</a></strong></center><br>
-            
+            <strong><a id="myBlinkingDiv" onclick="dhxwindow.show()">---> Open Waxio Popup <---</a></strong></center><br>
+            <script>
+            var blink_speed = 500; // every 1000 == 1 second, adjust to suit
+              var t = setInterval(function () {
+                  var ele = document.getElementById('myBlinkingDiv');
+                  ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+              }, blink_speed);
+              </script>
               <details><summary><strong>Chatroom</strong></summary>
                 <strong>
                   <a target="iframe" href="https://titanembeds.com/embed/886577077803958312">Open in Background</a><br>
