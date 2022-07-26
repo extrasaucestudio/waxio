@@ -99,9 +99,9 @@ function getProducers() {
         <tr class="prod-row">
             <td>${i+1}</td>
             
-            <td><a href="https://wax.bloks.io/account/${prod.affiliate_wallet}" target="_blank">${prod.affiliate_wallet}</a></td>
+            <td><a target="iframe" href="https://eosauthority.com/account/${prod.affiliate_wallet}?network=wax">${prod.affiliate_wallet}</a></td>
             
-            <td><a href="https://wax.bloks.io/account/${prod.wallet}" target="_blank">${prod.wallet}</a></td>
+            <td><a target="iframe" href="https://eosauthority.com/account/${prod.wallet}?network=wax">${prod.wallet}</a></td>
                       
         </tr>
         `)
